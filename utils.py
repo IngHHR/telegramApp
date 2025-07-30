@@ -3,6 +3,8 @@ from datetime import datetime
 
 DB_NAME = "db.sqlite"
 
+# Crear funciones actualizadas
+
 def init_db():
     conn = sqlite3.connect(DB_NAME)
     c = conn.cursor()

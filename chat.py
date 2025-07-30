@@ -119,6 +119,7 @@ print("✅ Bot corriendo...")
 import nest_asyncio
 
 if __name__ == "__main__":
+    print("✅ Ejecutando el archivo correcto")
     nest_asyncio.apply()
 
     async def run_bot():
