@@ -124,13 +124,8 @@ if __name__ == "__main__":
     async def run_bot():
         # Iniciar la tarea de recordatorios en paralelo
         asyncio.create_task(check_reminders(app))
-        # Iniciar el bot
-        await app.initialize()
-        await app.start()
-        await app.updater.start_polling()
-        print("✅ Bot escuchando comandos...")
-        # Mantener en ejecución
-        await asyncio.Event().wait()
+        # Ejecutar el bot con polling
+        await app.run_polling()
 
     asyncio.run(run_bot())
 
