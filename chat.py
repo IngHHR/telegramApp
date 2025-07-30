@@ -1,6 +1,5 @@
 import os
 import asyncio
-import nest_asyncio
 from dotenv import load_dotenv
 from telegram import Update
 from telegram.ext import (
@@ -116,16 +115,12 @@ app.add_handler(CommandHandler("gasto", gasto))
 app.add_handler(CommandHandler("recordatorio", add_reminder))
 
 print("✅ Bot corriendo...")
-import nest_asyncio
 
 if __name__ == "__main__":
     print("✅ Ejecutando el archivo correcto")
-    nest_asyncio.apply()
 
     async def run_bot():
-        # Iniciar la tarea de recordatorios en paralelo
         asyncio.create_task(check_reminders(app))
-        # Ejecutar el bot con polling
         await app.run_polling()
 
     asyncio.run(run_bot())
